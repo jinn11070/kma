@@ -148,7 +148,7 @@ TMapDistanceAxisLineChart.prototype.draw = function() {
 	//console.log(that.svg.node().getBoundingClientRect().width)
 	//console.log(that.svg.node().getBoundingClientRect().height)
 
-	that.svgWidth = 1280;
+	that.svgWidth = 938;
 	that.svgHeight = 200;
 };
 

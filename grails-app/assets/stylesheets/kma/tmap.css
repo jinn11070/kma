@@ -24,9 +24,11 @@ img {
 	display: inline-block;
 }
 
-#timeLineChartDiv li,
-#distanceLineChartDiv li {
+#timeLineChartDiv li {
 	height: 200px;
+}
+#distanceLineChartDiv li {
+	height: 270px;
 }
 
 .ds-table td {height: 25px; line-height: 29px; border: 1px solid #d6d6d8;}
@@ -189,7 +191,8 @@ img {
 }
 
 #polyPlayer #timeBar {
-	min-width: 980px;
+	/*min-width: 980px;*/
+	min-width: 650px;
 	height: 58px;
 }
 
@@ -283,8 +286,10 @@ img {
 }
 
 #slider {
-	width: 930px;
-	margin: 2.5% auto;
+	/*width: 930px;
+	margin: 2.5% auto;*/
+	width: 600px;
+	margin: 4% auto;
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 	border-radius: 0px;
@@ -344,17 +349,20 @@ img {
 	width: 6px;
 	height: 11px;
 	background: url("/assets/kma/player_time_bar_left.png");
-	margin: 2.5% auto;
+	/*margin: 2.5% auto;*/
+	margin: 4% auto;
 }
 .bar-right {
 	width: 6px;
 	height: 11px;
 	background: url("/assets/kma/player_time_bar_right.png");
-	margin: 2.5% auto;
+	/*margin: 2.5% auto;*/
+	margin: 4% auto;
 }
 
 #ticks {
-	width: 931px;
+	/*width: 931px;*/
+	width: 601px;
 	height: 25px;
 	/*background: url("/assets/kma/player_interval.png");*/
 	position: absolute;
@@ -366,7 +374,8 @@ img {
 	position: absolute;
 	left: -20px;
 	top: -35px;
-	width: 1000px;
+	/*width: 1000px;*/
+	width: 640px;
 }
 
 #ticksDate li {
@@ -377,7 +386,8 @@ img {
 	position: absolute;
 	left: -10px;
 	top: 0px;
-	width: 1000px;
+	/*width: 1000px;*/
+	width: 650px;
 }
 
 .ui-slider-tick-mark {

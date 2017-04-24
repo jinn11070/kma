@@ -107,7 +107,6 @@ TMapChart.prototype.dataParsing = function() {
 		.key(function(d) { return d.name })
 		.entries(that.dataList);
 
-	console.log(JSON.stringify(that.locationKeyList))
 };
 
 TMapChart.prototype.draw = function() {
@@ -134,18 +133,12 @@ TMapChart.prototype.update = function(selectedData) {
 	}
 
 	if (selectedData == undefined) {
-		that.currentTime = that.dateKeyList[that.dateKeyList.length - 1].key;
+		that.currentTime = that.dateKeyList[0].key;
 	} else {
 		that.currentTime = selectedData;
 	}
 
 	that.dateKeyList.forEach(function(row, i) {
-
-		//console.log(JSON.stringify(row))
-		//console.log(JSON.stringify(row.key))
-		//console.log(JSON.stringify(row.values))
-
-		console.log(i)
 
 		var date = row.key;
 		var dateValue = row.values;
@@ -182,8 +175,6 @@ TMapChart.prototype.drawDistanceAxisLineChart = function() {
 			that.locationInfo = d.values;
 		}
 	})
-
-	//console.log(JSON.stringify(that.locationInfo))
 
 	/* draw chart */
 	that.tmapDistanceAxisLineChart = new TMapDistanceAxisLineChart(that.checkedLegend);
@@ -319,7 +310,6 @@ TMapChart.prototype.showPolylineSvg = function(value) {
 
 		var id = $(this).attr("id");
 
-		//console.log(id + " : " + that.currentTime)
 		if (id.split("/")[1] == dateTime) {
 			$(this).parent().css("visibility", "visible");
 			$(this).parent().parent().css("visibility", "visible")
@@ -406,7 +396,6 @@ TMapChart.prototype.mapPosLineString = function() {
 
 	that.removePolyLine();
 
-	console.log(JSON.stringify(that.locationInfo))
 	for (var i = 0; i<that.locationInfo.length; i++) {
 
 		var pointList = [];
@@ -433,9 +422,7 @@ TMapChart.prototype.mapPosLineString = function() {
 		//pointObject["id"] = locationList[1].date;
 		//pointList.push(pointObject);
 
-		console.log(JSON.stringify(pointList))
 		var routeFormat = new Tmap.Format.KML({extractStyles: true, extractAttributes: true});
-		console.log(routeFormat.styles)
 
 		var urlStr = that.getUrl(pointList)
 
@@ -463,16 +450,10 @@ TMapChart.prototype.mapPosLineString = function() {
 
 
 		var svgId = $("div#" + routeLayer.id + " svg").attr("id")
-		console.log(svgId)
-
-			//.style("stroke", that.setPolylineColor(pos[that.checkedLegend]))
-		//console.log($("#" + routeLayer.id + "_vroot polyline").length)
-		//$("#" + routeLayer.id + " polyline").css("stroke", that.setPolylineColor(pos[that.checkedLegend]))
 
 		that.routeLayers.push(routeLayer);
 	}
 
-	console.log("eee")
 	$("[id^=Tmap_Geometry_Point_]").css("visibility", "hidden")
 };
 
@@ -575,8 +556,6 @@ TMapChart.prototype.drawLineString = function() {
 
 	var that = this;
 
-	console.log(JSON.stringify(that.locationInfo))
-
 	for (var i = 0; i <= that.locationInfo.length; i++) {
 
 		var pointList = [];
@@ -613,12 +592,9 @@ TMapChart.prototype.drawLineString = function() {
 			};
 		}
 
-		//console.log(JSON.stringify(pointList))
-
 		var lineString = new Tmap.Geometry.LineString(pointList);
 
 		lineString.id = lineString.id + "/" + pos.date;
-		//console.log(lineString.id)
 		var mLineFeature = new Tmap.Feature.Vector(lineString, null, line_Style);
 
 		var vectorLayer = new Tmap.Layer.Vector("vectorLayerID");
@@ -697,10 +673,8 @@ TMapChart.prototype.setSliderTicks = function(e) {
 
 		if (i == this.playMin || i == this.playMax) {
 			var timePoint = (i == this.playMin) ? "PAST" : "NOW";
-			$("<li class=\"ui-slider-tick-mark\" style=\"width: 60px;\">" + timePoint + " " + Number(month) + "/" + Number(date) + " " + Number(hour) + "시</li>").appendTo($("#ticksDate"));
-		} else {
-			var dateInterval = ($("#ticksDate").width() - 80) / this.playMax;
-			$("<li class=\"ui-slider-tick-mark\" style=\"width:"+ dateInterval +"px;\">&nbsp;</li>").appendTo($("#ticksDate"));
+			var float = (i == this.playMin) ? "" : "float:right";
+			$("<li class=\"ui-slider-tick-mark\" style=\"width: 60px; " + float + "\">" + timePoint + " " + Number(month) + "/" + Number(date) + " " + Number(hour) + "시</li>").appendTo($("#ticksDate"));
 		}
 
 	}
@@ -726,17 +700,10 @@ TMapChart.prototype.drawPlayer = function() {
 		create: function(event, ui) {
 			that.setSliderTicks(event.target, that.playerDates);
 
-			//console.log(JSON.stringify(that.playerDates))
-			//console.log(that.playerDates.length)
 		},
 		slide: function(event, ui) {
-			//console.log("slide:" + ui.value)
-			//console.log("date:" + that.playerDates[ui.value])
-			/*that.playIdx = ui.value*/
 		},
 		change: function(event, ui) {
-			//console.log("change:" + ui.value)
-			//console.log("date:" + that.playerDates[ui.value])
 			that.showPolylineSvg(ui.value);
 			that.drawDistanceAxisLineChart();
 			that.drawLineString();
@@ -790,7 +757,6 @@ TMapChart.prototype.controlPlayer = function(currentPosition, type) {
 		} else {
 			$("#slider").slider("value", currentPosition + 1);
 
-			//console.log(that.playerSpeed);
 			that.playSetTime = setTimeout(function(){ that.controlPlayer($("#slider").slider("value"), type) }, that.playerSpeed);
 		}
 	} else {
@@ -861,7 +827,6 @@ TMapChart.prototype.onDrawnFeatures = function($this, that) {
 };
 
 TMapChart.prototype.setViewMarkersByType = function(observerType) {
-	//console.log(observerType)
 	if (observerType == "all") {
 		$("div[id^=OL_Icon_]").show()
 	} else {
@@ -885,15 +850,13 @@ TMapChart.prototype.setMarker = function(observerType, lon, lat, width, height) 
 	that.map.addLayer(that.markerLayers);
 	var lonlat = new Tmap.LonLat(lon, lat).transform(that.pr_4326, that.pr_3857);
 
-	//console.log("title:" + title + "::date:" + date + "::" + lonlat)
-
 	var size = null;
 	var offset = null;
 
 	//if (roadstat != 0) {
 	size = new Tmap.Size(width, height);
 	//offset = new Tmap.Pixel(-(size.w/2), -size.h);
-	offset = new Tmap.Pixel(-(size.w/2), -size.h);
+	offset = new Tmap.Pixel(-(size.w/2) + 2, -size.h + 7);
 	//}
 
 	var iconImage = "";
@@ -919,7 +882,8 @@ TMapChart.prototype.drawMarkerPopup = function(dataList, date) {
 	var that = this;
 	that.searchedDataObject = dataList;
 
-	var middlePos = that.searchedDataObject[(that.searchedDataObject.length -1) / 2]
+	//var middlePos = that.searchedDataObject[(that.searchedDataObject.length -1) / 2]
+	var middlePos = that.searchedDataObject[that.searchedDataObject.length -1]
 
 	that.centerX = middlePos.lon;
 	that.centerY = middlePos.lat;

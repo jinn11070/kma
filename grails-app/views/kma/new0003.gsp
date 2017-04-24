@@ -43,7 +43,8 @@
 
 	$(document).ready(function() {
 
-		var tmapChart = new TMapChart(1300, 700);
+//		var tmapChart = new TMapChart(1300, 700);
+		var tmapChart = new TMapChart(940, 500);
 
 		tmapChart.setStartEndDateTime()
 		tmapChart.getData();
@@ -52,22 +53,14 @@
 
 		tmapChart.draw();
 
-
-
 		tmapChart.update();
 		tmapChart.onClickMarker(tmapChart.popup, tmapChart.marker.events.element.id + "_innerImage");
 
-//		tmapChart.drawTimeAxisLineChart();
-//		tmapChart.drawDistanceAxisLineChart();
-
 		tmapChart.drawLineLegend($(".weatherInfo:checked").attr("id"));
-//		tmapChart.drawLineString($(".weatherInfo:checked").attr("id"));
-//		tmapChart.mapPosLineString($(".weatherInfo:checked").attr("id"));
 
 		tmapChart.drawPlayer();
 
-//		tmapChart.setViewMarkersByType($("input[name=observerType]:checked").val(), $("input[name=viewMarker]").is(":checked"));
-		tmapChart.setViewPolyLineOrMarker($("input[name=observerType]:checked").val(), $("input[name=viewPolyLineOrMarker]:checked").val());
+//		tmapChart.setViewPolyLineOrMarker($("input[name=observerType]:checked").val(), $("input[name=viewPolyLineOrMarker]:checked").val());
 
 		/* click change */
 		$(".weatherInfo").on("ifChecked", function(e) {
@@ -97,17 +90,11 @@
 
 			tmapChart.onClickMarker(tmapChart.popup, tmapChart.marker.events.element.id + "_innerImage");
 
-//		tmapChart.drawTimeAxisLineChart();
-//		tmapChart.drawDistanceAxisLineChart();
-
 			tmapChart.drawLineLegend($(".weatherInfo:checked").attr("id"));
-//			tmapChart.drawLineString($(".weatherInfo:checked").attr("id"));
-//			tmapChart.mapPosLineString($(".weatherInfo:checked").attr("id"));
 
 			tmapChart.drawPlayer();
 			tmapChart.setSliderTicks("#slider")
 
-//			tmapChart.setViewMarkersByType($("input[name=observerType]:checked").val(), $("input[name=viewMarker]").is(":checked"));
 			tmapChart.setViewPolyLineOrMarker($("input[name=observerType]:checked").val(), $("input[name=viewPolyLineOrMarker]:checked").val());
 		});
 
