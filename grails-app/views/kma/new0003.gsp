@@ -112,6 +112,10 @@
 			tmapChart.setViewMarkersByType($("input[name=observerType]:checked").val());
 		});
 
+		$("input#toggleMarker").on("click", function() {
+			tmapChart.setViewMarkersByType($(this).is(":checked"));
+		})
+
 		/* weatherInfo */
 		$(".weatherInfo").each(function(){
 
@@ -254,7 +258,12 @@
 			</tr>
 			<tr id="polyLegend" style="display:none;">
 				<th>
-					<ul></ul>
+					<ul class="poly-legend"></ul>
+					<ul style="float: right;">
+						<li>
+							<label for="toggleMarker"><input type="checkbox" id="toggleMarker" checked="checked"/>marker 보기</label>
+						</li>
+					</ul>
 				</th>
 			</tr>
 			<tr id="markerLegend" style="display:none;">

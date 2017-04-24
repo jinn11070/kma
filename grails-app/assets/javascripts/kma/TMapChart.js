@@ -339,8 +339,10 @@ TMapChart.prototype.setViewPolyLineOrMarker = function(observerType, polyOrMarke
 		/* marker */
 		var $marker = $("div[id^=Tmap_Layer_Markers_]");
 		var $markerImg = $("div[id^=OL_Icon_] img");
-		$marker.css({"z-index":10000, "left": $marker.attr("left") + 10, "top":$marker.attr("top")+ 10 })
+		//$marker.css({"z-index":10000, "left": $marker.attr("left") + 10, "top":$marker.attr("top")+ 10 })
 		$markerImg.css({"width":"25px", "height":"25px"})
+		$marker.css({"z-index":10000})
+
 
 		/* distance line chart */
 		$("#timeLineChartDiv svg").remove();
@@ -369,7 +371,7 @@ TMapChart.prototype.setViewPolyLineOrMarker = function(observerType, polyOrMarke
 		/* marker */
 		var $marker = $("div[id^=Tmap_Layer_Markers_]");
 		var $markerImg = $("div[id^=OL_Icon_] img");
-		$markerImg.css({"width":"30px", "height":"30px"})
+		//$markerImg.css({"width":"30px", "height":"30px"})
 
 		/* view popup */
 		that.togglePopup(that.selectedPopup);
@@ -475,7 +477,7 @@ TMapChart.prototype.getUrl = function (value) {
 TMapChart.prototype.drawLineLegend = function(legendType) {
 	var that = this;
 
-	var ul = d3.select("#polyLegend ul");
+	var ul = d3.select("#polyLegend ul.poly-legend");
 
 	var statusObject = that.getLegendInterval(legendType);
 	var statusObjectKey = d3.keys(statusObject);
@@ -827,20 +829,37 @@ TMapChart.prototype.onDrawnFeatures = function($this, that) {
 };
 
 TMapChart.prototype.setViewMarkersByType = function(observerType) {
-	if (observerType == "all") {
-		$("div[id^=OL_Icon_]").show()
-	} else {
-		$(".tmPopup").hide();
-		$("div[id^=OL_Icon_]").each(function() {
-			var src = $(this).find("img").attr("src");
 
-			if (src.indexOf(observerType) != -1) {
-				$(this).show();
-			} else {
-				$(this).hide();
-			}
-		});
+	console.log(observerType)
+	console.log()
+
+
+	if (typeof observerType == "string") {
+		if (observerType == "all") {
+			$("div[id^=OL_Icon_]").show()
+		} else {
+			$(".tmPopup").hide();
+			$("div[id^=OL_Icon_]").each(function() {
+				var src = $(this).find("img").attr("src");
+
+				if (src.indexOf(observerType) != -1) {
+					$(this).show();
+				} else {
+					$(this).hide();
+				}
+			});
+		}
+
+	} else {
+		if (observerType) {
+			$("div[id^=OL_Icon_]").show()
+		} else {
+			$(".tmPopup").hide();
+			$("div[id^=OL_Icon_]").hide()
+		}
 	}
+
+
 };
 
 TMapChart.prototype.setMarker = function(observerType, lon, lat, width, height) {
@@ -856,7 +875,7 @@ TMapChart.prototype.setMarker = function(observerType, lon, lat, width, height) 
 	//if (roadstat != 0) {
 	size = new Tmap.Size(width, height);
 	//offset = new Tmap.Pixel(-(size.w/2), -size.h);
-	offset = new Tmap.Pixel(-(size.w/2) + 2, -size.h + 7);
+	offset = new Tmap.Pixel(-(size.w/2), -size.h);
 	//}
 
 	var iconImage = "";
