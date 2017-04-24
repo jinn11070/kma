@@ -340,9 +340,9 @@ TMapChart.prototype.setViewPolyLineOrMarker = function(observerType, polyOrMarke
 		var $marker = $("div[id^=Tmap_Layer_Markers_]");
 		var $markerImg = $("div[id^=OL_Icon_] img");
 		//$marker.css({"z-index":10000, "left": $marker.attr("left") + 10, "top":$marker.attr("top")+ 10 })
-		$markerImg.css({"width":"25px", "height":"25px"})
+		//$markerImg.css({"width":"25px", "height":"25px"})
+		//$markerImg.attr("src", "/assets/kma/polyline_marker.png");
 		$marker.css({"z-index":10000})
-
 
 		/* distance line chart */
 		$("#timeLineChartDiv svg").remove();
