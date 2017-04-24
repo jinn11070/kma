@@ -1,0 +1,502 @@
+img {
+	vertical-align: middle;
+}
+.ds-f-left {
+	float: left;
+}
+.ds-f-right {
+	float: right;
+}
+.ds-table {border: 1px solid #68707b;}
+.ds-table tr { column-span: all; column-count: 4}
+.ds-table th {height: 29px; line-height: 29px; background-color: #ffffff; padding-left: 20px; padding-right: 20px; font-size: 11px; border: 1px solid #68707b;}
+.ds-table th#tmap {padding: 0px;}
+.ds-table th #observer {
+	float: right;
+	font-size: 11px;
+}
+.ds-table span#location {font-size: 13px;}
+.ds-table th.grey {background-color: #eeeef0; border: 1px solid #d6d6d8;}
+.ds-table tr#weatherInfoRadioArea th {
+	height: 48px;
+}
+.ds-table tr#weatherInfoRadioArea th > div {
+	display: inline-block;
+}
+
+#timeLineChartDiv li,
+#distanceLineChartDiv li {
+	height: 200px;
+}
+
+.ds-table td {height: 25px; line-height: 29px; border: 1px solid #d6d6d8;}
+.ds-table td select {
+	/*height: 21px;*/
+	font-size: 11px;
+	padding-bottom: 3px;
+}
+/*.table   { display: table; border-collapse: collapse; width:100%;}
+/!*.caption {border:1px solid #68707b; caption-side: top; display: table-caption; border-collapse: collapse;}*!/
+.group {display: table-row-group; }
+.tablerow  { display: table-row; border: 1px solid #68707b;}
+.tablerow-grey { display: table-row; border: 1px solid #d6d6d8; background-color: #eeeef0;}
+.tablecell { display: table-cell; width: 33%;  border-left: 1px solid #d6d6d8;border-bottom: 1px solid #d6d6d8;border-right: 1px solid #d6d6d8;}
+.tablecell-grey { display: table-cell;  border: 1px solid #d6d6d8; background-color: #eeeef0; }*/
+
+
+.tmPopup {
+	/*overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0px;
+	outline: 0;*/
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	-webkit-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
+
+	background-color: #2f333c;
+}
+
+.tmPopup .title {
+	position: relative;
+	background: #2f333c url("/assets/kma/map_info_dialog_title.png") 9px 9px no-repeat;
+	padding: 2px 15px;
+	border: 0px;
+	border-bottom: 1px solid #50545b;
+	color: #fff;
+	font-size: 14px;
+	font-weight: normal;
+	text-indent: 10px;
+	line-height: 25px;
+	margin: 0px;
+}
+
+.tmPopup .tmPopupContent {
+	padding: 0px;
+	overflow: hidden;
+}
+
+.tmPopup .content {
+	padding: 5px;
+	overflow: hidden;
+}
+
+.tmPopup .content th {
+	text-align: left;
+}
+
+#tpr td, #wind td, #road td,
+#tpr th, #wind th, #road th
+{
+	border: 0px;
+}
+
+#tpr {
+	margin: 10px 0px;
+}
+#tpr img {
+	vertical-align: top;
+}
+
+#tpr span.unit {
+	color: #878da3;
+}
+
+#wind {
+	border-collapse:separate;
+	border-spacing:1px;
+}
+#wind td {
+
+	/*display: inline-block;*/
+	margin: 1px;
+	width: auto;
+	/*height: 30px;*/
+	line-height: 20px;
+	padding: 5px 5px;
+	background-color: #494d55;
+	color: #ffffff;
+	font-size: 12px;
+	text-align: left;
+	min-width: 100px;
+}
+#wind th {
+	padding: 0px;
+	font-size: 12px;
+	border: 0px;
+	background-color: #3b3f49;
+	color: #6d7076;
+	text-align: center;
+	font-weight: bold;
+	min-width: 40px;
+}
+#wind img {
+	float: left;
+	position:relative;
+	top: 35%;
+}
+
+#road {
+	margin-top: 5px;
+}
+#road th, #road td {
+
+	height: 20px;
+	line-height: 20px;
+	padding: 0px 0px 0px 5px;
+	background-color: transparent;
+	font-size: 11px;
+	min-width: 40px;
+}
+
+#road th {
+	color: #878da3;
+}
+#road td {
+	text-align: left;
+	color: #ffffff;
+}
+
+#chartDiv ul {
+	/*float: left;*/
+	/*width: 33.3%;*/
+	border-bottom: 1px solid #d6d6d8;
+}
+
+#polyPlayer td {
+	display: inline-block;
+	width: 100%;
+	height: 58px;
+	border: 1px solid #272727;
+	background: #3e3e3e; /* Old browsers */
+	background: -moz-linear-gradient(top,  #3e3e3e 0%, #222222 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #3e3e3e 0%,#222222 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #3e3e3e 0%,#222222 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e3e3e', endColorstr='#222222',GradientType=0 ); /* IE6-9 */
+
+	text-align:left;
+	vertical-align: middle;
+	line-height: 58px;
+}
+
+#polyPlayer td > *{
+	/*display: inline-block;*/
+	float: left;
+}
+
+#polyPlayer #timeBar {
+	min-width: 980px;
+	height: 58px;
+}
+
+/*#polyPlayer #timeBar > form > div {
+	clear: both;
+}*/
+
+#polyPlayer button.speed {
+	border: 0px;
+	outline: none;
+	font-size: 11px;
+	padding: 2px;
+	color: #dddddd;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.51);
+	-moz-box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.51);
+	border: 1px solid #212121;
+	box-shadow: 0px 2px 1px 0px rgba(0,0,0,0.51);
+	background: #565656; /* Old browsers */
+	background: -moz-linear-gradient(top,  #232323 0%, #565656 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #232323 0%,#565656 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #232323 0%,#565656 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#232323', endColorstr='#565656',GradientType=0 ); /* IE6-9 */
+}
+
+#polyPlayer button.speed:hover,
+#polyPlayer button.speed:focus {
+	background: #2d6eac;
+	outline: Highlight;
+}
+
+
+#polyPlayer button#prev {
+	border: 0px;
+	outline: none;
+	width: 20px;
+	height: 20px;
+	background: url('/assets/kma/prev.png') no-repeat;
+}
+
+#polyPlayer button#play {
+	border: 0px;
+	outline: none;
+	width: 20px;
+	height: 20px;
+	background: url('/assets/kma/play.png') no-repeat;
+}
+
+#polyPlayer button#next {
+	border: 0px;
+	outline: none;
+	width: 20px;
+	height: 20px;
+	background: url('/assets/kma/next.png') no-repeat;
+}
+
+#polyPlayer button#pause {
+	border: 0px;
+	outline: none;
+	width: 20px;
+	height: 20px;
+	background: url('/assets/kma/pause.png') no-repeat;
+}
+
+#polyPlayer button#prev:hover {
+	background: url('/assets/kma/prev_hover.png') no-repeat;
+}
+
+#polyPlayer button#play:hover,
+#polyPlayer button#play:focus {
+	background: url('/assets/kma/play_hover.png') no-repeat;
+}
+
+#polyPlayer button#next:hover {
+	background: url('/assets/kma/next_hover.png') no-repeat;
+}
+
+#polyPlayer button#pause:hover {
+	background: url('/assets/kma/pause_hover.png') no-repeat;
+}
+
+.prettyradio > a {
+	margin:0;
+	background:url('/assets/kma/sprites-sfa68604977.png')
+}
+
+.ui-slider-horizontal {
+	height: 11px;
+}
+
+#slider {
+	width: 930px;
+	margin: 2.5% auto;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+#slider .ui-widget-content .ui-state-default,
+#slider .ui-state-default {
+	border: 0px;
+	outline: none;
+	background: url("/assets/kma/player_time_circle.png") no-repeat;
+}
+#slider .ui-widget-content .focus,
+#slider .ui-state-focus {
+	border: 0px;
+	outline: none;
+	background: url("/assets/kma/player_time_circle_hover.png") no-repeat;
+}
+
+#slider.ui-widget-content {
+	border: 0px;
+	background: url("/assets/kma/player_time_bar_stopped.png")
+}
+
+#slider .ui-slider-range-min {
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+}
+
+#slider .ui-widget-header {
+	border: 0px;
+	background: url("/assets/kma/player_time_bar_played.png")
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+	top: -.35em;
+}
+
+.ui-slider .ui-slider-handle {
+	width: 1.4em;
+	height: 1.4em;
+}
+
+#timeBar .timeLineTicks li {
+	float: left;
+}
+
+#timeBar form > div {
+	margin-left: 15px;
+}
+
+#timeBar form > div > div {
+	float: left;
+}
+
+.bar-left {
+	width: 6px;
+	height: 11px;
+	background: url("/assets/kma/player_time_bar_left.png");
+	margin: 2.5% auto;
+}
+.bar-right {
+	width: 6px;
+	height: 11px;
+	background: url("/assets/kma/player_time_bar_right.png");
+	margin: 2.5% auto;
+}
+
+#ticks {
+	width: 931px;
+	height: 25px;
+	/*background: url("/assets/kma/player_interval.png");*/
+	position: absolute;
+	top: -7px;
+	left: 5px;
+}
+
+#ticksDate {
+	position: absolute;
+	left: -20px;
+	top: -35px;
+	width: 1000px;
+}
+
+#ticksDate li {
+	color: #4babd9;
+}
+
+#ticksTime {
+	position: absolute;
+	left: -10px;
+	top: 0px;
+	width: 1000px;
+}
+
+.ui-slider-tick-mark {
+	text-align: left;
+	float: left;
+	color: #c2c2c2;
+	font-size: 10px;
+}
+
+/* red custom */
+/* checked bg */
+.iradio_line-red {
+	padding: 4px 5px 4px 17px;
+	font-size: 11px;
+	line-height: 100%;
+	background: #323844;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+}
+
+/* unchecked icon */
+.iradio_line-red .icheck_line-icon {
+	top: 30%;
+	left: 0px;
+	width: 18px;
+	height: 18px;
+	margin: -6px 0 0 0;
+}
+
+/* unchecked icon */
+.roadstat.iradio_line-red .icheck_line-icon {
+	background: url('/assets/kma/check.png') -18px 0 no-repeat;
+}
+.roadtemperature.iradio_line-red .icheck_line-icon {
+	background: url('/assets/kma/check.png') -36px 0 no-repeat;
+}
+.roadhumidity.iradio_line-red .icheck_line-icon {
+	background: url('/assets/kma/check.png') -54px 0 no-repeat;
+}
+.roadfriction.iradio_line-red .icheck_line-icon {
+	background: url('/assets/kma/check.png') -72px 0 no-repeat;
+}
+.roadsurfaceheight.iradio_line-red .icheck_line-icon {
+	background: url('/assets/kma/check.png') -90px 0 no-repeat;
+}
+.roadfreezingtemperature.iradio_line-red .icheck_line-icon {
+	background: url('/assets/kma/check.png') -108px 0 no-repeat;
+}
+.roadfreezingrate.iradio_line-red .icheck_line-icon {
+	background: url('/assets/kma/check.png') -126px 0 no-repeat;
+}
+.visibility.iradio_line-red .icheck_line-icon {
+	background: url('/assets/kma/check.png') -144px 0 no-repeat;
+}
+.temperature.iradio_line-red .icheck_line-icon {
+	background: url('/assets/kma/check.png') -162px 0 no-repeat;
+}
+.pressure.iradio_line-red .icheck_line-icon {
+	background: url('/assets/kma/check.png') -180px 0 no-repeat;
+}
+.rainfall.iradio_line-red .icheck_line-icon {
+	background: url('/assets/kma/check.png') -198px 0 no-repeat;
+}
+
+/* hover icon */
+.iradio_line-red.hover .icheck_line-icon {
+	background: url('/assets/kma/check.png') -216px 0 no-repeat;
+}
+/* checked icon */
+.iradio_line-red.checked .icheck_line-icon {
+	background: url('/assets/kma/check.png') no-repeat;
+}
+
+/* unchecked bg */
+.roadstat.iradio_line-red.hover,
+.roadstat.iradio_line-red.checked {
+	background: #3f7b7e;
+}
+.roadtemperature.iradio_line-red.hover,
+.roadtemperature.iradio_line-red.checked {
+	background: #3c4eaa;
+}
+.roadhumidity.iradio_line-red.hover,
+.roadhumidity.iradio_line-red.checked {
+	background: #8370c9;
+}
+.roadfriction.iradio_line-red.hover,
+.roadfriction.iradio_line-red.checked {
+	background: #5e549f;
+}
+.roadsurfaceheight.iradio_line-red.hover,
+.roadsurfaceheight.iradio_line-red.checked {
+	background: #a74e8b;
+}
+.roadfreezingtemperature.iradio_line-red.hover,
+.roadfreezingtemperature.iradio_line-red.checked {
+	background: #824361;
+}
+.roadfreezingrate.iradio_line-red.hover,
+.roadfreezingrate.iradio_line-red.checked {
+	background: #a27b51;
+}
+.visibility.iradio_line-red.hover,
+.visibility.iradio_line-red.checked {
+	background: #c5ad79;
+}
+.temperature.iradio_line-red.hover,
+.temperature.iradio_line-red.checked {
+	background: #e84d38;
+}
+.pressure.iradio_line-red.hover,
+.pressure.iradio_line-red.checked {
+	background: #f1ca0b;
+}
+.rainfall.iradio_line-red.hover,
+.rainfall.iradio_line-red.checked {
+	background: #3ccae5;
+}
+
+
+

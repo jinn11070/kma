@@ -1,0 +1,30 @@
+text {
+    fill: #666666;
+    font-size: 9px;
+    font-weight: normal;
+}
+
+.dataContent {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.grid {
+	/*fill:red;*/
+	/*stroke-dasharray: 1,1;*/
+    stroke-opacity: 0;
+
+}
+
+.line {
+    fill: none;
+    /*stroke: #30333C;*/
+    stroke-width: 3px;
+	stroke-linecap: round;
+}
+
+.area {
+    /*fill: #30333C;*/
+    opacity: .5;
+}
+

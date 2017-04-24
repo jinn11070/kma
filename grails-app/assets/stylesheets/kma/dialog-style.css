@@ -1,0 +1,321 @@
+/* for Popup Widget */
+.ui-widget-overlay {
+	background: #666;
+	opacity: .3;
+	filter: Alpha(Opacity=50);
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+	border-bottom-right-radius: 0px;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+	border-bottom-left-radius: 0px;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+	border-top-right-radius: 0px;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+	border-top-left-radius: 0px;
+}
+
+.ui-dialog {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0px;
+	outline: 0;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	-webkit-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+	font-family: "Roboto", sans-serif;
+	font-size: 12px;
+}
+
+.ui-widget .ui-dialog-content tr {
+	/*height: 30px;*/
+}
+
+.ui-dialog .ui-dialog-content th {
+	text-align: left;
+}
+
+.ui-widget-content {
+	background: #2f333c;
+	border: 0px;
+	/*border: 2px solid #1c1d1f;*/
+	/*background: #00030a; //url('/assets/kma/black/jquery-ui/images/ui-bg_highlight-soft_100_eeeeee_1x100.png') 50% top repeat-x;*/
+	font-size: 12px;
+}
+
+.ui-dialog .ui-dialog-content {
+	padding: 0px;
+	color: #878da3;
+}
+
+
+
+.ui-dialog .ui-dialog-titlebar {
+	position: relative;
+	background: #2f333c url("/assets/kma/map_info_dialog_title.png") 9px 9px no-repeat;
+	padding: 2px 15px;
+	border: 0px;
+	border-bottom: 1px solid #50545b;
+	color: #fff;
+	font-size: 14px;
+	font-weight: normal;
+	text-indent: 10px;
+	line-height: 25px;
+	margin: 0px;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+	width: 30px;
+	height: 30px;
+	background: url("/assets/kma/map_info_dialog_close.png") 12px 12px no-repeat;
+	margin: -15px 0 0 0;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+	background: url("/assets/kma/map_info_dialog_close.png") 12px 12px no-repeat;
+}
+
+.ui-dialog .ui-dialog-title {
+	text-indent: 10px;
+	line-height: 25px;
+	margin: 0px;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+	float: none;
+}
+
+.ui-dialog-buttonset {
+	float: none;
+	text-align: center;
+}
+
+.ui-dialog-buttonpane {
+	border-top: 0px;
+	padding: 0px;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+	background: #0094DD;
+	padding: 1px 18px;
+	margin: 2px 3px 2px 3px;
+}
+
+.ui-dialog .ui-dialog-buttonpane button:hover {
+	background: #0077D0;
+}
+
+.ui-dialog-titlebar > .ui-state-default {
+	outline: none;
+	border: 0px;
+/*	background: url("/assets/kma/tab_icons.png") 0px -300px no-repeat;*/
+}
+
+.ui-dialog-titlebar > .ui-state-hover {
+	border: 0px;
+	/*background: url("/assets/kma/tab_icons.png") -30px -300px no-repeat;*/
+}
+
+.ui-state-default > .ui-icon {
+	background: none;
+}
+
+.ui-state-hover > .ui-icon {
+	background: none;
+}
+
+.ui-button-text-only .ui-button-text {
+	padding: 1px 15px 0 15px;
+}
+
+.ui-dialog-buttonset .ui-state-default {
+	cursor: pointer;
+	border-radius: 20px;
+	height: 21px;
+	background: #0094dd;
+	border: 0px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.ui-dialog-buttonset .ui-state-hover {
+	background: #00689b;
+	font-weight: bold;
+	color: #fff;
+}
+
+
+.ui-widget select {
+	width: 150px;
+	height: 23px;
+	background-position: 100% -5px;
+	background-color: #C1C7D1;
+	border: 1px solid #C1C7D1;
+	background-image: url("/assets/kma/select_arrow_icons.png");
+	background-repeat: no-repeat;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.ui-widget textarea {
+	background: #c1c7d1;
+	border: 1px solid #c1c7d1;
+	color: #1c1d1f;
+	width: 250px;
+	height: 200px;
+}
+
+.ui-widget input:not([type='checkbox,radio']) {
+	background: #C1C7D1;
+	border: 1px solid #C1C7D1;
+	color: #1c1d1f;
+	width: auto;
+	height: 21px;
+	text-indent: 10px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.ui-widget input::-webkit-input-placeholder {
+	color: #444444;
+}
+
+.ui-widget input::-moz-placeholder {
+	color: #444444;
+}
+
+.ui-widget input:-ms-input-placeholder {
+	color: #444444;
+}
+
+.ui-widget input:focus {
+	border: 1px solid #0E8CE1;
+}
+
+.ui-widget input:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+.ui-widget label {
+	color: #1c1d1f;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+/* dialog */
+.dialog-check-area {
+	float: right;
+	line-height: 12px;
+	font-family: "Roboto medium", sans-serif;
+	font-size: 12px;
+	color: #1c1d1f;
+}
+
+span.check {
+	font-size: 11px;
+}
+div.check {
+	width: 25px;
+	height: 25px;
+	background: url("/assets/kma/tree_icons.png") -100px -25px no-repeat;
+	position: relative;
+	float: left;
+	/*margin: 2px 5px 0 0;*/
+}
+
+div.check label {
+	cursor: pointer;
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	left: 2px;
+	top: 2px;
+	/*background: #0e8ce1;*/
+}
+
+div.check label:after {
+	content: '';
+	position: absolute;
+
+	top: 0px;
+	left: 0px;
+}
+
+div.check:hover {
+	background: url("/assets/kma/tree_icons.png") -300px -125px no-repeat;
+}
+
+/*.check label:hover::after {
+    width: 9px;
+    height: 9px;
+    top: -2px;
+    left: -2px;
+    border: 2px solid #f0ff00;
+}*/
+
+div.check input[type=checkbox]:checked + label:after {
+	width: 25px;
+	height: 25px;
+	top: -2px;
+	left: -2px;
+	background: url("/assets/kma/tree_icons.png") -75px -25px no-repeat;
+	/*-webkit-box-shadow: inset 0px 0px 4px 1px rgba(22, 173, 179, 0.6);
+	-moz-box-shadow: inset 0px 0px 4px 1px rgba(22, 173, 179, 0.6);
+	box-shadow: inset 0px 0px 4px 1px rgba(22, 173, 179, 0.6);*/
+}
+
+.check-label {
+	height: 15px;
+	line-height: 16px;
+	color: white;
+}
+
+.check-btn {
+	float: left;
+	position: relative;
+	margin-top: -6px;
+	line-height: 9px;
+	text-indent: 15px;
+}
+
+.check-btn label {
+	min-width: 200px;
+	font-family: "Roboto medium", sans-serif;
+	font-size: 11px;
+	line-height: 23px;
+	text-indent: 20px;
+}
+
+.check-btn span {
+	line-height: 28px;
+}
+
+#createSchemaColumnTable .check {
+	background: url("/assets/kma/tree_icons.png") -100px -100px no-repeat;
+}
+
+#createSchemaColumnTable .check:hover {
+	background: url("/assets/kma/tree_icons.png") -125px 0px no-repeat;
+}
+
+#createSchemaColumnTable .check input[type=checkbox]:checked + label:after {
+	background: url("/assets/kma/tree_icons.png") -75px -100px no-repeat;
+}

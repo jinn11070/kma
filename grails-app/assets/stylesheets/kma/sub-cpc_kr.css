@@ -1,0 +1,150 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+@import url(/assets/kma/common_pc.css);
+
+body{ background-image:url(/assets/kma/bg_sub-new.gif);background-repeat:repeat-x;}
+#wrap{width:940px; margin:0 auto;}
+
+.topnav{float:right;}
+.topnav dd{float:left; padding-right:11px; margin-right:10px; background:url(/assets/kma/bg_topnav.png) no-repeat 100% 50%;}
+.topnav dd:last-child{padding-right:0; margin-right:0; background:none;}
+.topnav dd.last{padding-right:0; margin-right:0; background:none;}
+.topnav dd a{color:#006; font-size:0.9em; text-transform:uppercase;}
+#topnav:after{content:""; display:block; clear:both;}
+#topnav{margin-top:10px; padding-top:10px; *zoom:1;}
+
+h1#logo{float:left;}
+h1#logo a{display:block; overflow:hidden; width:243px; height:43px;}
+#count{float:left; margin-top:5px; margin-left:115px;}
+#count{overflow:hidden; width:219px; height:38px; background:url(/assets/kma/bg_count-kr.jpg) no-repeat;}
+.count-img{float:left; margin:15px 0 0 0; font: 18pt Arial, Helvetica, sans-serif;}
+#D_100{margin-left:10px;}
+#H_10{margin-left:50px;}
+#M_10{margin-left:13px;}
+#S_10{margin-left:15px;}
+
+h1#ologo{float:right; margin-top:5px;}
+h1#ologo a{display:block; overflow:hidden; width:275px; height:38px; background:url(/assets/kma/logo-pc2018-kr.jpg) no-repeat; text-indent:-9999em;}
+.logos:after{content:""; display:block; clear:both;}
+.logos{margin-top:23px; margin-bottom:10px; *zoom:1;}
+
+/* navi css*/
+.navi li { /* 메뉴 각 항목에 대한 스타일 */
+	float: left; /* 왼쪽부터 표시 */
+	position: relative; /* 순서대로 표시 */
+	padding: 0; /* 안여백 없음 */
+	background:#600;  /* 내비게이션 전체 배경색 */
+}
+
+.navi li a { /* 메뉴 항목에서도 링크에 대한 스타일 */
+	display: block; /* 영역을 만듦 */
+	font-family:"Arial"; /* 글꼴 */
+	font-weight:600; /* 진하게 */
+	font-size:14px;	/* 글자크기 */
+	padding: 0; /* 안여백 */	
+	color: #fff; /* 메인 메뉴 글자색 */
+	text-decoration: none; /* 밑줄 없앰 */
+}
+.navi li a:hover { /* 메인 메뉴에 마우스 오버했을 때의 스타일 */
+	color:#00f; /* 마우스 오버했을 때 글자색 */
+}
+.navi li ul {  /* 서브 메뉴 영역에 대한 스타일 */
+	opacity: 0; /* 투명하게 표시 - 결국 평소엔 안보임 */
+	position: absolute; /* 고정 위치에 표시 */
+	left: 0; /* left 좌표는 메인 메뉴에서 움직이지 않음 */
+	width: 310px; /* 서브 메뉴 너비 */
+	background: #7aa3d9; /* 서브 메뉴 배경색 */
+	list-style-type: none; /* 서브 메뉴 항목의 불릿 없앰 */
+	padding: 0; /* 안여백 없음 */
+	margin: 0;  /* 여백 없음 */
+	z-index: 2;
+}
+
+#m22 {  /* 서브 메뉴 영역에 대한 스타일 */
+	width: 320px; /* 서브 메뉴 너비 */
+}
+
+.navi li:hover ul { /* 메인 메뉴 위로 마우스 오버했을 때 서브 메뉴 스타일 */
+	opacity: 1; /* 서브 메뉴 불투명해짐 -> 화면에 보임 */
+}
+.navi li ul li { /* 서브 메뉴 각 항목의 스타일 */
+	float: none; /* 플로팅하지 않음 */
+	position: static; /* 항목 크기에 맞게 배치됨 */
+	height: 0; /*높이값 없음 */
+	line-height: 0; /* 줄간격 없음 */
+	background: none; /* 배경 없음*/
+}
+.navi li:hover  ul li { /* 메인 메뉴 위로 마우스 오버 했을 때의 서브 메뉴 항목읫 스타일 */
+	height: 40px; /*높이 */
+	line-height: 35px; /* 줄간격 */
+	
+}
+.navi li ul li a { /* 서브 메뉴 항목의 링크 스타일 */
+	background: #7aa3d9; /* 배경색 */
+	text-indent:1em;
+	font-family:'NanumGothic',sans-serif; /* 글꼴 */
+	font-weight:500; /* 진하게 */
+	font-size:15px;	/* 글자크기 */
+	color:#FFF; /* 글자색 */
+}
+.navi li ul li a:hover { /* 서브 메뉴 위로 마우스 오버했을 때의 스타일 */
+	background: #7aa3d9; /* 배경색 */
+}
+
+#tschart{float: right;margin: 33px 15px 0 0;}
+
+#title{float:left; width:500px;}
+#title h2.small{font: 17px Arial, Helvetica, sans-serif;}
+#title h2.big{float:left;font: bold 30px Arial, Helvetica, sans-serif;}
+#title h2.red{float:left;margin-left:10px;color:#cc0033;}
+#pdf{float:right;}
+#pdf li{float:left; margin-left:10px;}
+li.pdf a{display:block; overflow:hidden; width:106px; height:21px; background:url(/assets/kma/title_bt_pdf_down_en.png) no-repeat; text-indent:-9999em;}
+li.print a{display:block; overflow:hidden; width:50px; height:21px; background: url(/assets/kma/title_bt_print_en.jpg) no-repeat; text-indent:-9999em;}
+li.preview a{display:block; overflow:hidden; width:70px; height:21px; background:url(/assets/kma/title_bt_preview_en.jpg) no-repeat; text-indent:-9999em;}
+.content1:after{content:""; display:block; clear:both;}
+.content1{margin-left:20px; margin-top:65px; *zoom:1;}
+.content2{width: 1300px; margin-left:-180px; margin-top:20px;}
+.content2 p{margin: 10px 0 10px 10px; font-size:1.2em;}
+.pic img{width:940px; height:456px;}
+.img1 img{width:940px; height:192px;}
+.img2 img{width:940px; height:341px;}
+.img3 img{width:577px; height:582px;margin-left:170px;}
+.titleimg{padding-bottom:50px;}
+.table2{padding-left:180px;}
+.red{color:#cc0033;}
+.blue{color:#06C;}
+.fleft{float:left;width:400px; height:100px;padding-left:10px;}
+.fright{float:right;width:400px; height:100px;padding-right:50px;}
+.figure2:after{content:""; display:block; clear:both;}
+
+h3.title1{float:left; margin:0 5px 0 22px; color:#cc0033; font: bold 17px Arial, Helvetica, sans-serif;}
+h3.title2{font: bold 17px Arial, Helvetica, sans-serif;}
+.content3 .titlebar{ margin:5px 0 10px 7px; overflow:hidden; width:933px; height:3px; background-image: url(/assets/kma/title-line.jpg); text-indent:-9999em;}
+.pright{float:right; margin-bottom:5px; color:#06C;}
+
+table{border-collapse:collapse; width:100%;}
+td{
+	padding:5px 0;
+	font-size: 1.15em;
+	border:1px solid;
+	text-align:center;
+}
+th{
+	padding:5px 0 5px 80px;
+	font-size: 1.15em;
+	border:1px solid;
+	text-align:left;
+	background-color:#F6F6F6;
+}
+.thead{padding:5px 0; text-align:center; font-weight:bold;}
+.cpcpdf{float:right; margin:10px 0 5px 0;}
+.cpcpdf p{float:left; font-size:1.1em; margin:5px 5px 0 0;}
+.cpcpdf img{float:left;}
+
+
+footer h1{float:left; overflow:hidden; width:137px; height:33px;}
+footer p{float:left; margin: 0 0 50px 154px; overflow:hidden; width:405px; height:33px;}
+footer:after{content:""; display:block; clear:both;}
+footer{ border-top:1px solid #ccc;margin-top:25px;padding-top:30px; *zoom:1;}

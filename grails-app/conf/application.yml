@@ -1,0 +1,177 @@
+---
+hibernate:
+    cache:
+        queries: false
+        use_second_level_cache: true
+        use_query_cache: false
+        region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+    connection:
+        CharSet: UTF-8
+        characterEncoding: UTF-8
+        useUnicode: true
+
+dataSource:
+    pooled: true
+    jmxExport: true
+    driverClassName: com.mysql.jdbc.Driver
+    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    username: root
+    password:
+    ip: localhost
+    port: 3307
+    devDB: kmaDev
+
+environments:
+    development:
+        dataSource:
+            dbCreate: update
+#            url: jdbc:h2:./devDb;MV_STORE=FALSE;MVCC=FALSE;DB_CLOSE_ON_EXIT=TRUE
+            url: jdbc:mysql://${dataSource.ip}:${dataSource.port}/${dataSource.devDB}?autoReconnect=true&useUnicode=yes&characterEncoding=UTF-8
+#            url: jdbc:mysql://localhost:3308/bassDBDev?autoReconnect=true&useUnicode=yes&characterEncoding=UTF-8
+            properties:
+                dbProperties :
+                    # Mysql specific driver properties
+                    # http://dev.mysql.com/doc/connector-j/en/connector-j-reference-configuration-properties.html
+                    # let Tomcat JDBC Pool handle reconnecting
+                    autoReconnect: true
+                    # truncation behaviour
+                    jdbcCompliantTruncation: false
+                    # mysql 0-date conversion
+                    zeroDateTimeBehavior: 'convertToNull'
+                    # Tomcat JDBC Pool's StatementCache is used instead, so disable mysql driver's cache
+                    cachePrepStmts: false
+                    cacheCallableStmts: false
+                    # Tomcat JDBC Pool's StatementFinalizer keeps track
+                    dontTrackOpenResources: true
+                    # performance optimization: reduce number of SQLExceptions thrown in mysql driver code
+                    holdResultsOpenOverStatementClose: true
+                    # enable MySQL query cache - using server prep stmts will disable query caching
+                    useServerPrepStmts: false
+                    # metadata caching
+                    cacheServerConfiguration: true
+                    cacheResultSetMetadata: true
+                    metadataCacheSize: 100
+                    # timeouts for TCP/IP
+                    connectTimeout: 15000
+                    socketTimeout: 120000
+                    # timer tuning (disable)
+                    maintainTimeStats: false
+                    enableQueryTimeouts: false
+                    # misc tuning
+                    noDatetimeStringSync: true
+
+    test:
+        dataSource:
+            dbCreate: update
+            url: jdbc:mysql://${dataSource.ip}:${dataSource.port}/bassDBTest?useUnicode=yes&characterEncoding=UTF-8
+            #url: jdbc:mysql://localhost:3308/bassDBTest?useUnicode=yes&characterEncoding=UTF-8
+    production:
+        dataSource:
+            dbCreate: update
+            #url: jdbc:h2:./prodDb;MV_STORE=FALSE;MVCC=FALSE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=TRUE
+#            url: jdbc:mysql://localhost:3307/bassDB?useUnicode=yes&characterEncoding=UTF-8
+            #jndiName: java:comp/env/bassDB?autoReconnect=true
+            jndiName: java:comp/env/${dataSource.devDB}?autoReconnect=true
+            properties:
+                jmxEnabled: true
+                initialSize: 5
+                maxActive: 50
+                minIdle: 5
+                maxIdle: 25
+                maxWait: 10000
+                maxAge: 600000
+                timeBetweenEvictionRunsMillis: 5000
+                minEvictableIdleTimeMillis: 60000
+                validationQuery: SELECT 1
+                validationQueryTimeout: 3
+                validationInterval: 15000
+                testOnBorrow: true
+                testWhileIdle: true
+                testOnReturn: false
+                jdbcInterceptors: ConnectionState
+                defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+
+---
+---
+grails:
+    profile: web
+    codegen:
+        defaultPackage: kma
+    spring:
+        transactionManagement:
+            proxies: false
+info:
+    app:
+        name: '@info.app.name@'
+        version: '@info.app.version@'
+        grailsVersion: '@info.app.grailsVersion@'
+spring:
+    groovy:
+        template:
+            check-template-location: false
+# Spring Actuator Endpoints are Disabled by Default
+endpoints:
+    enabled: false
+    jmx:
+        enabled: true
+
+server:
+    port: 8383
+
+---
+grails:
+    mime:
+        disable:
+            accept:
+                header:
+                    userAgents:
+                        - Gecko
+                        - WebKit
+                        - Presto
+                        - Trident
+        types:
+            all: '*/*'
+            atom: application/atom+xml
+            css: text/css
+            csv: text/csv
+            form: application/x-www-form-urlencoded
+            html:
+              - text/html
+              - application/xhtml+xml
+            js: text/javascript
+            json:
+              - application/json
+              - text/json
+            multipartForm: multipart/form-data
+            pdf: application/pdf
+            rss: application/rss+xml
+            text: text/plain
+            hal:
+              - application/hal+json
+              - application/hal+xml
+            xml:
+              - text/xml
+              - application/xml
+    urlmapping:
+        cache:
+            maxsize: 1000
+    controllers:
+        defaultScope: singleton
+    converters:
+        encoding: UTF-8
+    views:
+        default:
+            codec: html
+        gsp:
+            encoding: UTF-8
+            htmlcodec: xml
+            codecs:
+                expression: html
+                scriptlets: html
+                taglib: none
+                staticparts: none
+    dbconsole:
+            urlRoot: /dbconsole
+endpoints:
+    jmx:
+        unique-names: true

@@ -1,0 +1,97 @@
+#ui-datepicker-div {
+	border: 2px solid #1C1D1F;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	margin-top: 1px;
+	padding: 0px;
+}
+
+#ui-datepicker-div .ui-datepicker-header {
+	background: #1c1d1f;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	border: 0px;
+	color: #fff;
+	padding: 0px;
+	height: 35px;
+}
+
+.ui-datepicker .ui-datepicker-title {
+	margin: 5px 0 0 0;
+}
+
+#ui-datepicker-div .ui-datepicker-prev {
+	width: 30px;
+	height: 30px;
+	background: url('/assets/theme/white/icon/tab_icons.png') -0px -420px no-repeat;
+	border: 0px;
+}
+
+#ui-datepicker-div .ui-datepicker-next {
+	width: 30px;
+	height: 30px;
+	background: url('/assets/theme/white/icon/tab_icons.png') -0px -450px no-repeat;
+	border: 0px;
+}
+
+#ui-datepicker-div .ui-datepicker-prev-hover {
+	background: url('/assets/theme/white/icon/tab_icons.png') -30px -420px no-repeat;
+}
+
+#ui-datepicker-div .ui-datepicker-next-hover {
+	background: url('/assets/theme/white/icon/tab_icons.png') -30px -450px no-repeat;
+}
+
+#ui-datepicker-div .ui-datepicker-prev .ui-icon,
+#ui-datepicker-div .ui-datepicker-next .ui-icon,
+#ui-datepicker-div .ui-datepicker-prev.ui-state-hover .ui-icon,
+#ui-datepicker-div .ui-datepicker-next.ui-state-hover .ui-icon {
+	background: none;
+}
+
+#ui-datepicker-div span[title=Sunday] {
+	color: red;
+}
+
+#ui-datepicker-div span[title=Saturday] {
+	color: blue;
+}
+
+/*#ui-datepicker-div .ui-datepicker-calendar td[data-handler=selectDay] a {
+    border: 0px;
+    background: none;
+    text-align: center;
+}*/
+
+#ui-datepicker-div .ui_tpicker_hour_slider.ui-corner-all,
+#ui-datepicker-div .ui_tpicker_minute_slider.ui-corner-all,
+#ui-datepicker-div .ui_tpicker_second_slider.ui-corner-all {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+#ui-datepicker-div .ui_tpicker_hour_slider.ui-widget-content,
+#ui-datepicker-div .ui_tpicker_minute_slider.ui-widget-content,
+#ui-datepicker-div .ui_tpicker_second_slider.ui-widget-content {
+	border: 1px solid #dddddd;
+}
+
+#ui-datepicker-div .ui-slider-handle {
+	border: 0px;
+	width: 7px;
+	background: #FF6158;
+	top: -3px;
+	margin-left: -1px;
+}
+
+#ui-datepicker-div button {
+	border-radius: 20px;
+	height: 21px;
+	background: #0094dd;
+	border: 0px;
+	font-weight: bold;
+	color: #fff;
+}
