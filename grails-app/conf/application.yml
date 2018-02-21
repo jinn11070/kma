@@ -25,9 +25,9 @@ environments:
     development:
         dataSource:
             dbCreate: update
-#            url: jdbc:h2:./devDb;MV_STORE=FALSE;MVCC=FALSE;DB_CLOSE_ON_EXIT=TRUE
+            # {rootPath}/sql 폴더 내부에 테이블 생성, 인서트 쿼리 참고바람.
             url: jdbc:mysql://${dataSource.ip}:${dataSource.port}/${dataSource.devDB}?autoReconnect=true&useUnicode=yes&characterEncoding=UTF-8
-#            url: jdbc:mysql://localhost:3308/bassDBDev?autoReconnect=true&useUnicode=yes&characterEncoding=UTF-8
+            # url: jdbc:h2:./devDb;MV_STORE=FALSE;MVCC=FALSE;DB_CLOSE_ON_EXIT=TRUE
             properties:
                 dbProperties :
                     # Mysql specific driver properties
